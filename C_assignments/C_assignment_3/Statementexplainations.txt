@@ -1,0 +1,16 @@
+declaration int x[8]= {10,20,30,40,50,60,70,80};
+
+a. What is the meaning of x?
+ANS: THE BASE ADDRESS OF ARRAY X i.e, ADDRESS OF X[0]
+ 
+b. What is the meaning of (x+2)?
+ANS: THE index 2 address OF ARRAY X i.e, ADDRESS OF X[2]
+
+c. What is the value of *x?
+ANS: VALUE AT X[0]
+
+d. What is the value of (*x+2)?
+ANS: VALUE X[0]+2
+
+e. What is the value of *(x+2)?
+ANS: VALUE AT X[2] 
