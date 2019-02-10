@@ -1,26 +1,88 @@
 #include<stdio.h>
 #include<string.h>
-void deleteChar(char* str,char ch){
-
-	int	len = strlen(str);
-	   	
-  	for(int i = 0; i < len; i++)
-	{
-		if(str[i] == ch)
-		{
-			for(int j = i; j < len; j++)
-			{
-				str[j] = str[j + 1];
-			}
-			len--;
-			i--;	
-		} 
-	}	
+char* reverse(char* s){
+	printf("entered reverse\n");
+	int len;
+	len=strlen(s);
+	char *p1,*p2=NULL;
+	for(p1=s,p2=s+(len-1);p1<p2;p1++,p2--){
+		char temp;
+		*p1=*p2;
+		*p2=temp;
+	}
+	printf(s);
+	return s;
 }
-int main() {
-	char s1[] = "Bro Im SHubodh";
-    deleteChar(s1,'H');
-	printf("new string is %s",s1);
-
+int compare(char* s1,char* s2){
+	char *p1=s1,*p2=s2;
+	while(*p1==*p2){
+		if(p1=='\0'){
+			return 0;
+		}
+		else if(*p1>*p2){
+			return 1;
+		}
+		else{
+			return -1;
+		}
+		p1++;p2++;
+	}
+	
+}
+char* concat(char* s1, char* s2){
+	char *p1=s1,*p2=s2;
+	while(*p1!='\0'){
+	p1++;	
+	}
+	while(*p2!='\0'){
+		*p1=*p2;
+		p2++;
+		p1++;
+	}
+	return s1;
+}
+char* copy(char* s3, char*s1){
+	 char *p1,*p2;
+	 while(*p2!=NULL){
+ 		*p1=*p2;
+ 		p1++;p2++;
+ 	} *p1='/0';
+ 	return s3;
+}
+int main(){
+	char* str="hello";
+	char *str2="hi",*str3;
+	int scann;int a=0;
+	while(a==0){
+		printf("enter 1.reverse 2.compare 3.concat 4.strcpy others: exit\n");
+		scanf("%d",&scann);
+		switch(scann){
+			case 1:
+			str=reverse(str);printf(str);
+			break;
+			case 2:
+			int a=compare(str,str2);
+			if(a==0){
+				printf("same");
+			}
+			else if(a>1){
+				printf("str is greater");
+			}
+			else{
+				printf("str2 is greater");
+			}
+			break;
+			case 3:
+			str=concat(str,str2);printf(str);break;
+			case 4:
+			str3=copy(str3,str);printf(str3);break;
+			default:
+			a=1;
+			break;
+			
+		}
+		
+		
+	}
 	return 0;
 }
