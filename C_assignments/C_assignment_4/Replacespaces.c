@@ -1,9 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include<string.h>
+#include<string>
 int replace(char s[]) {
-	int len = strlen(s);int count=0;
-	for(int i=0;i<len;i++){
+	int len = strlen(s);int count=0;int i=0;
+	for( i=0;i<len;i++){
 	    if(*(s+i)==' '){
 	        *(s+i)='-';
 	        count++;
@@ -13,7 +13,7 @@ int replace(char s[]) {
 
 }
 int main() {
-	char k[] = "the cat sat";
+	char k[]= "the cat sat";
 	int replaced = replace(k);
 	printf("new string is %s \n",k);
     printf("replaced spaces count %d",replaced);
